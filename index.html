@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>榆懿林铝合金雨棚源头工厂 | 南昌专业铝合金制品</title>
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --dark1: #070b14;
+      --dark2: #0d1525;
+      --dark3: #13203a;
+      --blue1: #0f3460;
+      --gold1: #c9a84c;
+      --gold2: #e8d080;
+      --gold3: #f5eccc;
+      --silver: #b8ccd8;
+      --text: #f0eadf;
+      --textsub: #9ab0c0;
+      --cardbg: rgba(13,21,37,0.85);
+      --cardborder: rgba(201,168,76,0.28);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Microsoft YaHei','微软雅黑','PingFang SC',sans-serif;
+      background: var(--dark1);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:var(--dark1); }
+    ::-webkit-scrollbar-thumb { background:var(--gold1); border-radius:3px; }
+
+    /* ========= NAV ========= */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:1000;
+      padding: 14px 48px;
+      display: flex; align-items:center; justify-content:space-between;
+      background: rgba(7,11,20,0.92);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+      transition: box-shadow .3s;
+    }
+    .nav-logo { display:flex; align-items:center; gap:13px; }
+    .logo-box {
+      width:46px; height:46px;
+      background: linear-gradient(135deg,#c9a84c,#e8d080);
+      border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:22px; font-weight:900; color:#070b14;
+      box-shadow: 0 4px 15px rgba(201,168,76,0.35);
+    }
+    .logo-text .main {
+      font-size:17px; font-weight:800;
+      background: linear-gradient(90deg,#c9a84c,#e8d080);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .logo-text .sub { font-size:10px; color:var(--textsub); letter-spacing:3px; }
+
+    .nav-menu { display:flex; gap:34px; list-style:none; }
+    .nav-menu a {
+      color:var(--textsub); text-decoration:none; font-size:14px; letter-spacing:1px;
+      position:relative; transition:color .3s;
+    }
+    .nav-menu a::after {
+      content:''; position:absolute; bottom:-4px; left:0; width:0; height:1px;
+      background:var(--gold1); transition:width .3s;
+    }
+    .nav-menu a:hover { color:var(--gold1); }
+    .nav-menu a:hover::after { width:100%; }
+
+    .nav-call {
+      display:flex; align-items:center; gap:9px;
+      padding:9px 22px;
+      background: linear-gradient(135deg,#c9a84c,#e8d080);
+      color:#070b14; text-decoration:none;
+      border-radius:30px; font-size:14px; font-weight:700;
+      box-shadow: 0 4px 18px rgba(201,168,76,0.35);
+      transition: all .3s;
+    }
+    .nav-call:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(201,168,76,0.55); }
+
+    /* ========= HERO ========= */
+    .hero {
+      min-height:100vh; position:relative;
+      display:flex; align-items:center; justify-content:center;
+      padding:90px 40px 60px; overflow:hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse at 15% 60%, rgba(15,52,96,0.45) 0%,transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(201,168,76,0.12) 0%,transparent 50%),
+        linear-gradient(160deg,#070b14 0%,#0d1525 45%,#13203a 100%);
+    }
+    .hero-grid {
+      position:absolute; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);
+      background-size:60px 60px;
+    }
+    #particles { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .particle {
+      position:absolute; border-radius:50%;
+      background:var(--gold1); opacity:.12;
+      animation:risingParticle linear infinite;
+    }
+    @keyframes risingParticle {
+      0%   { transform:translateY(100vh) scale(0); opacity:0; }
+      10%  { opacity:.15; }
+      90%  { opacity:.08; }
+      100% { transform:translateY(-10vh) scale(1.2); opacity:0; }
+    }
+
+    .hero-content { position:relative; z-index:10; text-align:center; max-width:960px; }
+
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 22px; border:1px solid rgba(201,168,76,0.42);
+      border-radius:30px; font-size:12px; letter-spacing:3.5px; color:var(--gold1);
+      margin-bottom:32px;
+      animation:fadeDown .8s ease both;
+    }
+    .badge-dot {
+      width:7px; height:7px; background:var(--gold1); border-radius:50%;
+      animation:dotPulse 2s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%,100% { transform:scale(1); opacity:1; }
+      50%      { transform:scale(1.7); opacity:.45; }
+    }
+
+    .hero-h1 {
+      font-size: clamp(26px,4vw,48px);
+      font-weight:900; line-height:1.15; margin-bottom:18px;
+      animation:fadeUp .8s ease .15s both;
+    }
+    .hero-h1 .g {
+      display:block;
+      background: linear-gradient(120deg,#c9a84c,#e8d080,#f5eccc,#e8d080,#c9a84c);
+      background-size:200% auto;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      animation:shimmer 4s linear infinite;
+    }
+    @keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+
+    .hero-sub {
+      font-size: clamp(13px,1.8vw,17px);
+      color:var(--textsub); letter-spacing:5px; margin-bottom:52px;
+      animation:fadeUp .8s ease .3s both;
+    }
+
+    .hero-stats {
+      display:flex; justify-content:center; gap:70px; margin-bottom:58px;
+      animation:fadeUp .8s ease .45s both;
+    }
+    .stat { text-align:center; }
+    .stat-n {
+      font-size:52px; font-weight:900; line-height:1;
+      background:linear-gradient(to bottom,#e8d080,#c9a84c);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .stat-u { font-size:20px; }
+    .stat-l { font-size:11px; color:var(--textsub); letter-spacing:2.5px; margin-top:6px; }
+
+    .hero-btns {
+      display:flex; gap:20px; justify-content:center; flex-wrap:wrap;
+      animation:fadeUp .8s ease .6s both;
+    }
+    .btn-gold {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:16px 44px;
+      background:linear-gradient(135deg,#c9a84c,#e8d080);
+      color:#070b14; text-decoration:none;
+      border-radius:50px; font-size:16px; font-weight:700; letter-spacing:2px;
+      box-shadow:0 8px 28px rgba(201,168,76,0.42);
+      transition:all .3s;
+    }
+    .btn-gold:hover { transform:translateY(-4px); box-shadow:0 16px 44px rgba(201,168,76,0.6); }
+    .btn-ghost {
+      display:inline-flex; align-items:center; gap:10px;
+      padding:14px 40px;
+      border:2px solid rgba(201,168,76,0.45);
+      color:var(--gold1); text-decoration:none;
+      border-radius:50px; font-size:16px; font-weight:600; letter-spacing:2px;
+      transition:all .3s;
+    }
+    .btn-ghost:hover { background:rgba(201,168,76,0.1); border-color:var(--gold1); transform:translateY(-4px); }
+
+    .scroll-hint {
+      position:absolute; bottom:38px; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:8px;
+      color:var(--textsub); font-size:11px; letter-spacing:3px;
+      animation:floatY 3s ease-in-out infinite;
+    }
+    .scroll-bar { width:1px; height:38px; background:linear-gradient(to bottom,#c9a84c,transparent); }
+    @keyframes floatY {
+      0%,100% { transform:translateX(-50%) translateY(0); }
+      50%      { transform:translateX(-50%) translateY(9px); }
+    }
+
+    /* ========= SECTION BASE ========= */
+    section { padding:100px 48px; }
+    .sec-head { text-align:center; margin-bottom:70px; }
+    .sec-tag {
+      display:inline-block; padding:5px 20px;
+      border:1px solid var(--gold1); border-radius:20px;
+      font-size:11px; letter-spacing:4px; color:var(--gold1); margin-bottom:18px;
+    }
+    .sec-title { font-size:clamp(26px,3.8vw,46px); font-weight:800; margin-bottom:14px; }
+    .sec-title .g { color:var(--gold1); }
+    .sec-divider {
+      width:56px; height:3px; margin:14px auto;
+      background:linear-gradient(to right,#c9a84c,#e8d080); border-radius:2px;
+    }
+    .sec-desc { font-size:14px; color:var(--textsub); max-width:580px; margin:0 auto; line-height:1.9; }
+
+    /* fade-in */
+    .fi { opacity:0; transform:translateY(28px); transition:opacity .7s ease,transform .7s ease; }
+    .fi.on { opacity:1; transform:translateY(0); }
+
+    /* ========= ABOUT ========= */
+    .about { background:linear-gradient(160deg,var(--dark2),var(--dark1)); position:relative; overflow:hidden; }
+    .about::after {
+      content:''; position:absolute; top:0; right:0; width:500px; height:500px;
+      background:radial-gradient(circle,rgba(201,168,76,0.04) 0%,transparent 70%); pointer-events:none;
+    }
+    .about-wrap { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; max-width:1200px; margin:0 auto; }
+
+    .about-card {
+      background:var(--cardbg); border:1px solid var(--cardborder);
+      border-radius:22px; padding:38px 36px;
+      position:relative; overflow:hidden;
+    }
+    .about-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(to right,#c9a84c,#e8d080,transparent);
+    }
+
+    .factory-svg-wrap { width:100%; height:220px; display:flex; align-items:center; justify-content:center; margin-bottom:28px; }
+
+    .feat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .feat-tag {
+      display:flex; align-items:center; gap:8px;
+      padding:10px 14px;
+      background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.2); border-radius:10px;
+      font-size:13px;
+    }
+    .ft-dot { width:6px; height:6px; background:var(--gold1); border-radius:50%; flex-shrink:0; }
+
+    .about-text h2 { font-size:36px; font-weight:800; line-height:1.35; margin-bottom:20px; }
+    .about-text p { font-size:14.5px; color:var(--textsub); line-height:2; margin-bottom:24px; }
+
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+    .metric {
+      text-align:center; padding:22px 12px;
+      background:var(--cardbg); border:1px solid var(--cardborder); border-radius:15px;
+    }
+    .metric-v { font-size:34px; font-weight:900; color:var(--gold1); line-height:1; }
+    .metric-l { font-size:11px; color:var(--textsub); margin-top:7px; letter-spacing:1.5px; }
+
+    /* ========= PRODUCTS ========= */
+    .products { background:var(--dark1); }
+    .prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1200px; margin:0 auto; }
+
+    /* Flip Card */
+    .fcard { perspective:1200px; height:400px; cursor:pointer; }
+    .fcard-inner {
+      position:relative; width:100%; height:100%;
+      transition:transform .85s cubic-bezier(.4,0,.2,1);
+      transform-style:preserve-3d;
+    }
+    .fcard:hover .fcard-inner { transform:rotateY(180deg); }
+
+    .ff, .fb {
+      position:absolute; inset:0; border-radius:22px; overflow:hidden;
+      backface-visibility:hidden; -webkit-backface-visibility:hidden;
+    }
+
+    .ff {
+      background:var(--cardbg); border:1px solid var(--cardborder);
+      display:flex; flex-direction:column; align-items:center; justify-content:space-between;
+      padding:32px 28px; position:relative;
+    }
+    .ff::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(to right,transparent,#c9a84c,transparent);
+    }
+    .ff::after {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(circle at 50% 38%,rgba(201,168,76,0.05) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .prod-svg { width:100%; height:200px; display:flex; align-items:center; justify-content:center; overflow:hidden; border-radius:14px; }
+    .prod-svg img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+    .ff:hover .prod-svg img { transform:scale(1.06); }
+    .prod-name { font-size:17px; font-weight:700; letter-spacing:2px; text-align:center; }
+    .prod-en { font-size:10px; color:var(--gold1); letter-spacing:3px; border:1px solid rgba(201,168,76,0.3); padding:4px 13px; border-radius:20px; }
+    .flip-tip { position:absolute; bottom:12px; right:16px; font-size:10px; color:rgba(201,168,76,0.45); }
+
+    .fb {
+      background:linear-gradient(145deg,#0f3460,#13203a);
+      border:1px solid var(--cardborder);
+      transform:rotateY(180deg);
+      display:flex; flex-direction:column; justify-content:center;
+      padding:36px 30px; position:relative;
+    }
+    .fb::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background:linear-gradient(to right,#c9a84c,#e8d080,transparent);
+    }
+    .fb::after {
+      content:''; position:absolute; bottom:-30px; right:-30px;
+      width:160px; height:160px;
+      background:radial-gradient(circle,rgba(201,168,76,0.1) 0%,transparent 70%);
+    }
+    .fb-icon { font-size:44px; margin-bottom:14px; }
+    .fb-title { font-size:19px; font-weight:700; color:var(--gold1); margin-bottom:13px; }
+    .fb-desc { font-size:12.5px; color:var(--textsub); line-height:1.85; margin-bottom:18px; }
+    .fb-list { list-style:none; }
+    .fb-list li {
+      font-size:12px; color:var(--textsub); padding:6px 0;
+      border-bottom:1px solid rgba(201,168,76,0.1);
+      display:flex; align-items:center; gap:8px;
+    }
+    .fb-list li::before { content:'◈'; color:var(--gold1); font-size:9px; }
+
+    /* ========= SERVICES ========= */
+    .services { background:linear-gradient(160deg,var(--dark3),var(--dark2)); }
+    .srv-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1200px; margin:0 auto; }
+    .srv-card {
+      background:var(--cardbg); border:1px solid var(--cardborder);
+      border-radius:18px; padding:36px 24px; text-align:center;
+      transition:all .35s; position:relative; overflow:hidden;
+    }
+    .srv-card::before {
+      content:''; position:absolute; bottom:0; left:0; right:0; height:0;
+      background:linear-gradient(to top,rgba(201,168,76,0.06),transparent);
+      transition:height .35s;
+    }
+    .srv-card:hover { transform:translateY(-10px); border-color:var(--gold1); box-shadow:0 22px 55px rgba(201,168,76,0.14); }
+    .srv-card:hover::before { height:100%; }
+    .srv-icon { font-size:52px; margin-bottom:20px; display:block; }
+    .srv-name { font-size:16px; font-weight:700; color:var(--gold1); margin-bottom:11px; }
+    .srv-desc { font-size:12.5px; color:var(--textsub); line-height:1.85; }
+
+    /* ========= CONTACT ========= */
+    .contact { background:var(--dark1); }
+    .contact-wrap { max-width:1060px; margin:0 auto; }
+    .contact-box {
+      background:linear-gradient(145deg,var(--dark2),var(--dark3));
+      border:1px solid var(--cardborder); border-radius:26px; padding:64px;
+      position:relative; overflow:hidden;
+    }
+    .contact-box::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:4px;
+      background:linear-gradient(to right,#c9a84c,#e8d080,#c9a84c);
+    }
+    .contact-box::after {
+      content:''; position:absolute; right:-60px; bottom:-60px;
+      width:320px; height:320px;
+      background:radial-gradient(circle,rgba(201,168,76,0.07) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+
+    .c-info h3 { font-size:32px; font-weight:800; line-height:1.4; margin-bottom:14px; }
+    .c-info p { font-size:14px; color:var(--textsub); line-height:1.9; margin-bottom:40px; }
+
+    .phone-cta { display:inline-flex; align-items:center; gap:18px; text-decoration:none; }
+    .phone-ring {
+      width:70px; height:70px;
+      background:linear-gradient(135deg,#c9a84c,#e8d080);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:30px;
+      animation:ringWave 2.8s ease-in-out infinite;
+      box-shadow:0 0 0 0 rgba(201,168,76,.4);
+    }
+    @keyframes ringWave {
+      0%   { box-shadow:0 0 0 0 rgba(201,168,76,.5); }
+      70%  { box-shadow:0 0 0 22px rgba(201,168,76,0); }
+      100% { box-shadow:0 0 0 0 rgba(201,168,76,0); }
+    }
+    .phone-text .number { font-size:32px; font-weight:900; color:var(--gold1); letter-spacing:3px; line-height:1; }
+    .phone-text .hint { font-size:12px; color:var(--textsub); letter-spacing:2px; margin-top:5px; }
+
+    .detail-list { list-style:none; display:flex; flex-direction:column; gap:22px; }
+    .detail-item { display:flex; align-items:flex-start; gap:16px; }
+    .d-icon {
+      width:44px; height:44px; flex-shrink:0;
+      background:rgba(201,168,76,.09); border:1px solid rgba(201,168,76,.26);
+      border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:19px;
+    }
+    .d-label { font-size:11px; color:var(--gold1); letter-spacing:2px; margin-bottom:3px; }
+    .d-val { font-size:14px; color:var(--text); font-weight:600; }
+
+    /* ========= FLOATING PHONE BUTTON ========= */
+    .float-phone {
+      position:fixed; right:30px; bottom:40px; z-index:999;
+      width:60px; height:60px;
+      background:linear-gradient(135deg,#c9a84c,#e8d080);
+      border-radius:50%; display:flex; align-items:center; justify-content:center;
+      font-size:26px; text-decoration:none;
+      box-shadow:0 8px 28px rgba(201,168,76,.5);
+      animation:ringWave 2.5s ease-in-out infinite;
+      transition:transform .3s;
+    }
+    .float-phone:hover { transform:scale(1.12); }
+    .float-phone-label {
+      position:fixed; right:96px; bottom:56px; z-index:998;
+      background:rgba(13,21,37,.92); border:1px solid rgba(201,168,76,.3);
+      color:var(--gold1); padding:7px 14px; border-radius:20px; font-size:13px; font-weight:600;
+      white-space:nowrap; backdrop-filter:blur(8px);
+      opacity:0; transition:opacity .3s;
+      pointer-events:none;
+    }
+    .float-phone:hover + .float-phone-label { opacity:1; }
+
+    /* ========= FOOTER ========= */
+    footer {
+      background:var(--dark1); border-top:1px solid rgba(201,168,76,.15);
+      padding:44px 48px; text-align:center;
+    }
+    .footer-inner { max-width:1200px; margin:0 auto; }
+    .footer-brand {
+      font-size:20px; font-weight:800; margin-bottom:10px;
+      background:linear-gradient(to right,#c9a84c,#e8d080);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .footer-sep { width:40px; height:1px; background:rgba(201,168,76,.3); margin:12px auto; }
+    .footer-copy { font-size:12px; color:var(--textsub); letter-spacing:1.5px; line-height:2; }
+
+    /* ========= KEYFRAMES ========= */
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ========= RESPONSIVE ========= */
+    @media(max-width:1100px) {
+      .prod-grid { grid-template-columns:repeat(2,1fr); }
+      .srv-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:900px) {
+      .about-wrap,.contact-grid { grid-template-columns:1fr; }
+      .hero-stats { gap:36px; }
+      nav { padding:14px 24px; }
+      .nav-menu { display:none; }
+      section { padding:70px 24px; }
+    }
+    @media(max-width:600px) {
+      .prod-grid { grid-template-columns:1fr; }
+      .srv-grid { grid-template-columns:1fr; }
+      .contact-box { padding:38px 26px; }
+      .hero-stats { flex-wrap:wrap; gap:28px; }
+      .hero-btns { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="nav-logo">
+    <div class="logo-box">榆</div>
+    <div class="logo-text">
+      <div class="main">榆懿林铝合金雨棚源头工厂</div>
+      <div class="sub">YUYI LIN ALUMINUM</div>
+    </div>
+  </div>
+  <ul class="nav-menu">
+    <li><a href="#about">关于我们</a></li>
+    <li><a href="#products">产品展示</a></li>
+    <li><a href="#services">服务优势</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+  <a href="tel:18379999987" class="nav-call">📞&nbsp;18379999987</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>南昌铝合金制品专业厂家 · 已营业十余年<span class="badge-dot"></span></div>
+    <h1 class="hero-h1">
+      全国一站式服务<br>
+      <span class="g">雨棚 · 凉亭 · 车棚 · 葡萄架</span>
+    </h1>
+    <p class="hero-sub">专注铝合金制品十余年&emsp;·&emsp;品质保障&emsp;·&emsp;量身定制&emsp;·&emsp;厂家直销</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-n" id="c1">10<span class="stat-u">+</span></div>
+        <div class="stat-l">年行业经验</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" id="c2">10000<span class="stat-u">+</span></div>
+        <div class="stat-l">完工案例</div>
+      </div>
+      <div class="stat">
+        <div class="stat-n" id="c3">100<span class="stat-u">%</span></div>
+        <div class="stat-l">满意服务</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="tel:18379999987" class="btn-gold">📞 立即致电咨询</a>
+      <a href="#products" class="btn-ghost">🏗️ 查看产品系列</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-bar"></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="sec-head fi">
+    <div class="sec-tag">ABOUT US</div>
+    <h2 class="sec-title">品牌故事 · <span class="g">匠心传承</span></h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="about-wrap">
+    <div class="about-card fi">
+      <div class="factory-svg-wrap">
+        <!-- Factory illustration SVG -->
+        <svg width="300" height="210" viewBox="0 0 300 210">
+          <defs>
+            <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#c9a84c"/>
+              <stop offset="100%" style="stop-color:#e8d080"/>
+            </linearGradient>
+            <linearGradient id="gBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#1a3a6b"/>
+              <stop offset="100%" style="stop-color:#0a1526"/>
+            </linearGradient>
+            <linearGradient id="gSky" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#0d2040"/>
+              <stop offset="100%" style="stop-color:#070b14"/>
+            </linearGradient>
+          </defs>
+          <!-- Sky background -->
+          <rect width="300" height="210" fill="url(#gSky)" rx="12"/>
+          <!-- Stars -->
+          <circle cx="20" cy="20" r="1.2" fill="#fff" opacity=".5"/>
+          <circle cx="60" cy="15" r="1" fill="#fff" opacity=".4"/>
+          <circle cx="240" cy="25" r="1.5" fill="#fff" opacity=".5"/>
+          <circle cx="280" cy="12" r="1" fill="#fff" opacity=".4"/>
+          <circle cx="200" cy="18" r="1.2" fill="#c9a84c" opacity=".5"/>
+          <!-- Moon -->
+          <circle cx="260" cy="30" r="16" fill="#c9a84c" opacity=".15"/>
+          <circle cx="267" cy="25" r="13" fill="url(#gSky)"/>
+
+          <!-- Factory main building -->
+          <rect x="40" y="105" width="220" height="95" fill="url(#gBlue)" rx="4"/>
+          <!-- Roof -->
+          <polygon points="30,105 150,55 270,105" fill="url(#gGold)"/>
+          <!-- Roof edge detail -->
+          <line x1="30" y1="105" x2="270" y2="105" stroke="#e8d080" stroke-width="2.5"/>
+          <!-- Roof top cap -->
+          <rect x="138" y="50" width="24" height="10" rx="3" fill="url(#gGold)"/>
+          <circle cx="150" cy="48" r="6" fill="#e8d080"/>
+          <!-- Flag -->
+          <line x1="150" y1="42" x2="150" y2="25" stroke="#e8d080" stroke-width="1.5"/>
+          <polygon points="150,25 165,30 150,35" fill="#c9a84c"/>
+
+          <!-- Windows row -->
+          <rect x="60" y="120" width="32" height="26" rx="3" fill="#4a9eff" opacity=".55"/>
+          <rect x="108" y="120" width="32" height="26" rx="3" fill="#4a9eff" opacity=".55"/>
+          <rect x="160" y="120" width="32" height="26" rx="3" fill="#4a9eff" opacity=".55"/>
+          <rect x="208" y="120" width="32" height="26" rx="3" fill="#4a9eff" opacity=".55"/>
+          <!-- Window cross bars -->
+          <line x1="76" y1="120" x2="76" y2="146" stroke="#1a4080" stroke-width="1"/>
+          <line x1="60" y1="133" x2="92" y2="133" stroke="#1a4080" stroke-width="1"/>
+          <line x1="124" y1="120" x2="124" y2="146" stroke="#1a4080" stroke-width="1"/>
+          <line x1="108" y1="133" x2="140" y2="133" stroke="#1a4080" stroke-width="1"/>
+          <line x1="176" y1="120" x2="176" y2="146" stroke="#1a4080" stroke-width="1"/>
+          <line x1="160" y1="133" x2="192" y2="133" stroke="#1a4080" stroke-width="1"/>
+          <line x1="224" y1="120" x2="224" y2="146" stroke="#1a4080" stroke-width="1"/>
+          <line x1="208" y1="133" x2="240" y2="133" stroke="#1a4080" stroke-width="1"/>
+
+          <!-- Main door -->
+          <rect x="125" y="155" width="50" height="45" fill="url(#gGold)" rx="5"/>
+          <circle cx="150" cy="178" r="3.5" fill="#fff" opacity=".5"/>
+          <!-- Door arch -->
+          <path d="M125,165 Q150,150 175,165" fill="none" stroke="#e8d080" stroke-width="1.5"/>
+
+          <!-- Side wing left -->
+          <rect x="0" y="140" width="44" height="60" fill="url(#gBlue)" rx="3"/>
+          <rect x="8" y="150" width="20" height="16" rx="2" fill="#4a9eff" opacity=".45"/>
+          <!-- Side wing right -->
+          <rect x="256" y="140" width="44" height="60" fill="url(#gBlue)" rx="3"/>
+          <rect x="272" y="150" width="20" height="16" rx="2" fill="#4a9eff" opacity=".45"/>
+
+          <!-- Chimney -->
+          <rect x="86" y="75" width="14" height="32" fill="url(#gBlue)"/>
+          <ellipse cx="93" cy="73" rx="9" ry="5" fill="#c9a84c" opacity=".7"/>
+          <!-- Smoke -->
+          <circle cx="93" cy="60" r="7" fill="#c9a84c" opacity=".2"/>
+          <circle cx="97" cy="48" r="5" fill="#c9a84c" opacity=".12"/>
+
+          <!-- Ground -->
+          <rect x="0" y="200" width="300" height="10" fill="url(#gGold)" opacity=".25"/>
+          <!-- Ground line glow -->
+          <line x1="0" y1="200" x2="300" y2="200" stroke="#c9a84c" stroke-width="1.5" opacity=".3"/>
+
+          <!-- Badge overlay -->
+          <rect x="95" y="72" width="110" height="30" rx="15" fill="url(#gGold)" opacity=".9"/>
+          <text x="150" y="91" text-anchor="middle" fill="#070b14" font-size="12.5" font-weight="900" font-family="Microsoft YaHei,sans-serif">✦ 深耕铝业十余年 ✦</text>
+        </svg>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-tag"><span class="ft-dot"></span>国家质量认证</div>
+        <div class="feat-tag"><span class="ft-dot"></span>专业安装团队</div>
+        <div class="feat-tag"><span class="ft-dot"></span>品质终身保障</div>
+        <div class="feat-tag"><span class="ft-dot"></span>售后无忧服务</div>
+      </div>
+    </div>
+
+    <div class="about-text fi">
+      <h2>十年匠心铸造<br><span style="color:var(--gold1)">精品铝合金工程</span></h2>
+      <p>榆懿林铝合金雨棚源头工厂深耕铝合金建材行业逾十余年，始终以"精工制造、品质为本"为核心理念。我们拥有先进的生产设备与严格的品质管控体系，为广大客户提供安全、美观、耐久的优质铝合金产品。</p>
+      <p>多年来，我们服务客户遍及全国各省市地区，完工工程超10000余个，凭借过硬的技术实力与诚信的服务态度，赢得了广大客户的信赖与好评。每一处工程，都是我们最好的名片。</p>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-v">10+</div>
+          <div class="metric-l">年行业经验</div>
+        </div>
+        <div class="metric">
+          <div class="metric-v">10000+</div>
+          <div class="metric-l">完工案例</div>
+        </div>
+        <div class="metric">
+          <div class="metric-v">6</div>
+          <div class="metric-l">产品系列</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+  <div class="sec-head fi">
+    <div class="sec-tag">PRODUCTS</div>
+    <h2 class="sec-title">精品系列 · <span class="g">六大产品</span></h2>
+    <div class="sec-divider"></div>
+    <p class="sec-desc">悬停卡片即可翻转查看产品详情 · 六大系列全面满足您的需求</p>
+  </div>
+  <div class="prod-grid">
+
+    <!-- P1: 铝合金耐力板雨棚 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金凉亭.jpg" alt="铝合金耐力板雨棚实景"/>
+          </div>
+          <div class="prod-name">铝合金耐力板雨棚</div>
+          <div class="prod-en">POLYCARBONATE CANOPY</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">🏗️</div>
+          <div class="fb-title">铝合金耐力板雨棚</div>
+          <div class="fb-desc">采用优质铝合金骨架配合进口耐力板，防紫外线、高透光、超强防雨，美观实用兼备。</div>
+          <ul class="fb-list">
+            <li>优质铝合金骨架，耐腐蚀防锈</li>
+            <li>进口耐力板，透光率高达85%</li>
+            <li>防紫外线，抗冲击强度优秀</li>
+            <li>支持任意尺寸量身定制</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2: 铝合金凉亭 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金葡萄架.jpg" alt="铝合金凉亭实景"/>
+          </div>
+          <div class="prod-name">铝合金凉亭</div>
+          <div class="prod-en">ALUMINUM GAZEBO</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">⛩️</div>
+          <div class="fb-title">铝合金凉亭</div>
+          <div class="fb-desc">精美中式或现代风格铝合金凉亭，工艺精湛，造型典雅，是园林景观的点睛之笔。</div>
+          <ul class="fb-list">
+            <li>中式/现代/欧式多种风格可选</li>
+            <li>全铝合金结构，轻量高强</li>
+            <li>防腐防蛀，使用寿命20年+</li>
+            <li>专业团队精工安装，工期短</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3: 铝合金长城板凉亭 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金车棚.jpg" alt="铝合金长城板凉亭实景"/>
+          </div>
+          <div class="prod-name">铝合金长城板凉亭</div>
+          <div class="prod-en">WALL PANEL GAZEBO</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">🏛️</div>
+          <div class="fb-title">铝合金长城板凉亭</div>
+          <div class="fb-desc">以铝合金长城板为侧墙，兼具遮阳避风功能，外观层次丰富，时尚美观大气。</div>
+          <ul class="fb-list">
+            <li>长城板横向纹理，质感出众</li>
+            <li>遮阳遮雨遮风，实用性强</li>
+            <li>铝合金材质，永不生锈变色</li>
+            <li>百余种色号，满足个性搭配</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4: 铝合金长城板雨棚 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金长城板凉亭.jpg" alt="铝合金长城板雨棚实景"/>
+          </div>
+          <div class="prod-name">铝合金长城板雨棚</div>
+          <div class="prod-en">WALL PANEL CANOPY</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">☂️</div>
+          <div class="fb-title">铝合金长城板雨棚</div>
+          <div class="fb-desc">以长城板为顶面材料，立体纹理极具质感，是现代建筑门头装饰的绝佳选择。</div>
+          <ul class="fb-list">
+            <li>长城板纹理，现代建筑美学</li>
+            <li>全铝合金结构，超轻高承重</li>
+            <li>防水密封处理，雨天滴水不渗</li>
+            <li>适用门头、窗台等多种场景</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P5: 铝合金车棚 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金长城板雨棚.jpg" alt="铝合金车棚实景"/>
+          </div>
+          <div class="prod-name">铝合金车棚</div>
+          <div class="prod-en">ALUMINUM CARPORT</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">🚗</div>
+          <div class="fb-title">铝合金车棚</div>
+          <div class="fb-desc">专业铝合金车棚，拱形或平顶结构可选，有效保护爱车免受日晒雨淋，美观实用。</div>
+          <ul class="fb-list">
+            <li>拱形/平顶/斜顶多种结构可选</li>
+            <li>承载力强，抗风雪能力优秀</li>
+            <li>铝合金框架，耐候性极佳</li>
+            <li>可拓展设计，支持多车位</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- P6: 铝合金葡萄架 -->
+    <div class="fcard fi">
+      <div class="fcard-inner">
+        <div class="ff">
+          <div class="prod-svg">
+            <img src="images/铝合金雨棚.jpg" alt="铝合金葡萄架实景"/>
+          </div>
+          <div class="prod-name">铝合金葡萄架</div>
+          <div class="prod-en">ALUMINUM PERGOLA</div>
+          <div class="flip-tip">🔄 悬停翻转</div>
+        </div>
+        <div class="fb">
+          <div class="fb-icon">🌿</div>
+          <div class="fb-title">铝合金葡萄架</div>
+          <div class="fb-desc">精致铝合金葡萄架，网格框架设计，可攀爬植物，兼顾遮阴休闲，打造庭院绿意空间。</div>
+          <ul class="fb-list">
+            <li>开放式网格，植物攀爬理想</li>
+            <li>铝合金耐候，户外长期无忧</li>
+            <li>承重优秀，可叠加多种植物</li>
+            <li>增添庭院绿意，提升居住品质</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="sec-head fi">
+    <div class="sec-tag">OUR SERVICES</div>
+    <h2 class="sec-title">服务优势 · <span class="g">全程保障</span></h2>
+    <div class="sec-divider"></div>
+    <p class="sec-desc">从设计到安装，我们提供一站式服务解决方案，让您省心、放心、安心</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card fi">
+      <span class="srv-icon">🎨</span>
+      <div class="srv-name">量身定制设计</div>
+      <div class="srv-desc">专业设计师团队，根据您的建筑结构与审美需求，量身打造个性化专属方案。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">🏭</span>
+      <div class="srv-name">工厂直销价格</div>
+      <div class="srv-desc">自有工厂直接生产，省去中间环节，厂价出售，质优价廉，最大程度让利于客户。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">⚙️</span>
+      <div class="srv-name">专业安装团队</div>
+      <div class="srv-desc">经验丰富的安装师傅，严格按施工规范操作，确保安装质量，准时完工交付。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">🛡️</span>
+      <div class="srv-name">品质保固承诺</div>
+      <div class="srv-desc">产品出厂严格质检，提供多年质量保固，让您的投资安全有据可依，无后顾之忧。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">📐</span>
+      <div class="srv-name">免费上门测量</div>
+      <div class="srv-desc">提供免费上门测量服务，专业评估现场环境，为您制定最合理的施工方案。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">🌈</span>
+      <div class="srv-name">多色彩任意选</div>
+      <div class="srv-desc">提供百余种铝合金色号，从经典银白到仿木纹，满足各类建筑风格的搭配需求。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">🚀</span>
+      <div class="srv-name">高效快速交付</div>
+      <div class="srv-desc">从下单到完工，流程透明高效，标准工期短，紧急项目可加急安排处理。</div>
+    </div>
+    <div class="srv-card fi">
+      <span class="srv-icon">📞</span>
+      <div class="srv-name">全程售后服务</div>
+      <div class="srv-desc">专业售后团队随时响应，定期回访，让您的产品始终保持最佳使用状态。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="sec-head fi">
+    <div class="sec-tag">CONTACT US</div>
+    <h2 class="sec-title">联系我们 · <span class="g">免费咨询</span></h2>
+    <div class="sec-divider"></div>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-box fi">
+      <div class="contact-grid">
+        <div class="c-info">
+          <h3>欢迎来电咨询<br><span style="color:var(--gold1)">免费上门 · 免费报价</span></h3>
+          <p>无论您有任何铝合金产品需求，我们都将竭诚为您服务。专业顾问实时在线，免费测量，免费出设计方案，让您的家居环境更美更耐用。</p>
+          <a href="tel:18379999987" class="phone-cta">
+            <div class="phone-ring">📞</div>
+            <div class="phone-text">
+              <div class="number">183 7999 9987</div>
+              <div class="hint">▶ 点击图标立即拨打</div>
+            </div>
+          </a>
+        </div>
+        <div>
+          <ul class="detail-list">
+            <li class="detail-item">
+              <div class="d-icon">📍</div>
+              <div>
+                <div class="d-label">公司地址</div>
+                <div class="d-val"><a href="https://uri.amap.com/marker?position=115.908,28.637&name=榆懿林铝合金雨棚源头工厂&src=榆懿林铝合金雨棚&coordinate=gcj02&callnative=1" target="_blank" style="color:var(--gold1);text-decoration:none;" title="点击打开高德地图导航">📍 江西省南昌市青云谱区金鹰路32号（点击导航）</a></div>
+              </div>
+            </li>
+            <li class="detail-item">
+              <div class="d-icon">📱</div>
+              <div>
+                <div class="d-label">联系电话</div>
+                <div class="d-val"><a href="tel:18379999987" style="color:var(--gold1);text-decoration:none;">18379999987</a></div>
+              </div>
+            </li>
+            <li class="detail-item">
+              <div class="d-icon">⏰</div>
+              <div>
+                <div class="d-label">营业时间</div>
+                <div class="d-val">08:00 — 20:00（全年无休）</div>
+              </div>
+            </li>
+            <li class="detail-item">
+              <div class="d-icon">🏆</div>
+              <div>
+                <div class="d-label">经营年限</div>
+                <div class="d-val">深耕铝合金行业逾十余年</div>
+              </div>
+            </li>
+            <li class="detail-item">
+              <div class="d-icon">✅</div>
+              <div>
+                <div class="d-label">服务承诺</div>
+                <div class="d-val">免费测量 · 专业安装 · 品质保固</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">榆懿林铝合金雨棚源头工厂</div>
+    <div class="footer-sep"></div>
+    <div class="footer-copy">
+      © 2024 榆懿林铝合金雨棚源头工厂 · 专业铝合金雨棚 · 凉亭 · 车棚 · 葡萄架制造商<br>
+      电话：<a href="tel:18379999987" style="color:var(--gold1);text-decoration:none;">18379999987</a> &emsp;|&emsp; 服务全国客户
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING PHONE BUTTON ===== -->
+<a href="tel:18379999987" class="float-phone" title="立即拨打">📞</a>
+<div class="float-phone-label">点击拨打 18379999987</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  // === Particles ===
+  (function(){
+    var c = document.getElementById('particles');
+    for(var i=0;i<22;i++){
+      var p=document.createElement('div');
+      p.className='particle';
+      var s=Math.random()*5+2;
+      p.style.cssText='width:'+s+'px;height:'+s+'px;left:'+Math.random()*100+'%;'
+        +'animation-duration:'+(Math.random()*18+12)+'s;animation-delay:'+(Math.random()*12)+'s;';
+      c.appendChild(p);
+    }
+  })();
+
+  // === Scroll fade-in ===
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
+
+  // === Nav shadow on scroll ===
+  window.addEventListener('scroll',function(){
+    var n=document.getElementById('nav');
+    n.style.boxShadow=window.scrollY>60?'0 4px 32px rgba(0,0,0,.4)':'none';
+  });
+
+  // === Counter animation ===
+  function countUp(el,target,suffix,duration){
+    var start=0,step=target/( duration/16 );
+    var t=setInterval(function(){
+      start+=step;
+      if(start>=target){ start=target; clearInterval(t); }
+      el.innerHTML=Math.floor(start)+'<span class="stat-u">'+suffix+'</span>';
+    },16);
+  }
+  var heroObs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      setTimeout(function(){
+        countUp(document.getElementById('c1'),10,'+',1200);
+        countUp(document.getElementById('c2'),10000,'+',1800);
+        countUp(document.getElementById('c3'),100,'%',1400);
+      },400);
+      heroObs.disconnect();
+    }
+  },{threshold:.4});
+  var hs=document.querySelector('.hero');
+  if(hs) heroObs.observe(hs);
+
+  // === Smooth anchor scroll ===
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+    });
+  });
+</script>
+</body>
+</html>
